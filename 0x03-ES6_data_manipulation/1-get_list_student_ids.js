@@ -1,4 +1,6 @@
-export default function getListStudentsIds(...args) {
-  const ids = args.flat().map((obj) => obj.id);
-  return ids;
+export default function getListStudentsIds(args) {
+  if (!Array.isArray(args)) {
+    return [];
+  }
+  return Array.map((student) => student.id);
 }
